@@ -25,10 +25,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          # ลบบรรทัด cache: 'npm' ออก เพื่อแก้ปัญหาหาไฟล์ Lock ไม่เจอ
 
       - name: Install dependencies
-        run: npm ci
+        # เปลี่ยนจาก npm ci เป็น npm install เพื่อสร้าง Lock file ชั่วคราวตอนรัน
+        run: npm install
 
       - name: Build
         run: npm run build
