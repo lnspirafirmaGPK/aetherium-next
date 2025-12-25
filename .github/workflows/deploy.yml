@@ -1,8 +1,8 @@
-name: Deploy React to GitHub Pages
+name: Deploy Aetherium Next
 
 on:
   push:
-    branches: ["main"] # หรือ "master" ตามชื่อ branch หลักของคุณ
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -39,7 +39,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # ชี้ไปที่โฟลเดอร์ dist ที่ได้จากการ build ของ Vite
           path: './dist'
 
   deploy:
